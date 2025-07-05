@@ -1,0 +1,26 @@
+[project]
+name = "purex"
+version = "0.1.0"
+description = "PuReX - Pull Request eXtractor"
+readme = "README.md"
+authors= [
+    { name = "Javad Mokhtari Koushyar", email = "javadmokhtari@outlook.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.1.8",
+    "httpx>=0.28.1",
+    "rich>=14.0.0",
+]
+
+[project.scripts]
+purex = "purex.cli:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "isort>=5.13.2",
+]
