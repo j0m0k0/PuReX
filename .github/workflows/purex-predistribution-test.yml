@@ -31,3 +31,6 @@ jobs:
 
       - name: Run tests
         run: uv run pytest
+
+      - name: Sort the imports
+        run: uv run isort src/
