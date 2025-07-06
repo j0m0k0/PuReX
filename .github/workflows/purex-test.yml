@@ -1,4 +1,4 @@
-name: Python package
+name: Test PuReX
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
+    name: Run tests
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
@@ -26,11 +27,29 @@ jobs:
       - name: Setup uv
         run: pip install uv && uv sync
 
-      - name: Sync dependencies
+      - name: Install package and dev dependencies
         run: uv pip install -e .[dev]
 
       - name: Run tests
         run: uv run pytest
 
-      - name: Sort the imports
-        run: uv run isort src/
+
+  isort-check:
+    name: Check import order (isort)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.13"
+
+      - name: Setup uv
+        run: pip install uv && uv sync
+
+      - name: Install package and dev dependencies
+        run: uv pip install -e .[dev]
+
+      - name: Check import order with isort
+        run: uv run isort src/ --check --diff
