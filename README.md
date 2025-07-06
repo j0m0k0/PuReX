@@ -1,6 +1,7 @@
 <p><img align="center" style="padding: 0px 15px;" src="./logo/PuReX.png"></p>
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.12-blueviolet?style=flat">
+  <img src="https://img.shields.io/badge/Python-3.12-blueviolet?style=flat" />
+  <img src="https://img.shields.io/pypi/dm/purex" />
   <a href="" target="_blank"><img src="https://img.shields.io/badge/view-Documentation-red?"></a>
 <!--   <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/pytest.yml?branch=main"> -->
   <img src="https://img.shields.io/github/commit-activity/m/j0m0k0/PuReX">
