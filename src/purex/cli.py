@@ -1,8 +1,11 @@
-import click
 import asyncio
 import json
-from purex.prs import fetch_and_filter_prs
+
+import click
+
 from purex.maintainers import fetch_maintainers_summary
+from purex.prs import fetch_and_filter_prs
+
 
 @click.group(invoke_without_command=True)
 @click.pass_context

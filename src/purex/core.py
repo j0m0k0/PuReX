@@ -1,18 +1,11 @@
 
-import httpx
 import asyncio
-
-
-
-
-from rich.progress import Progress, SpinnerColumn, BarColumn, TimeElapsedColumn, TextColumn
-
-
-
+import os
 from datetime import datetime, timedelta, timezone
 
-import os
-
+import httpx
+from rich.progress import (BarColumn, Progress, SpinnerColumn, TextColumn,
+                           TimeElapsedColumn)
 
 # Constants
 BASE_URL = "https://api.github.com"
