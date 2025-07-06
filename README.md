@@ -1,4 +1,4 @@
-<p><img align="center" src="./logo/PuReX.png"></p>
+<img src="./logo/PuReX.png" style="max-width:100%; border: none;" />
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blueviolet?style=flat" />
   <img src="https://img.shields.io/pypi/dm/purex" />
