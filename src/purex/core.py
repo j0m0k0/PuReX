@@ -13,6 +13,7 @@ from datetime import datetime, timedelta, timezone
 
 import os
 
+
 # Constants
 BASE_URL = "https://api.github.com"
 try:
