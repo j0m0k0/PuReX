@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/Python-3.12-blueviolet?style=flat" />
   <img src="https://img.shields.io/pypi/dm/purex" />
   <a href="" target="_blank"><img src="https://img.shields.io/badge/view-Documentation-red?"></a>
-<!--   <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/pytest.yml?branch=main"> -->
+  <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/purex-test.yml?branch=main">
   <img src="https://img.shields.io/github/commit-activity/m/j0m0k0/PuReX">
   <img src="https://img.shields.io/github/license/j0m0k0/PuReX">
 <!--   <a href="https://zenodo.org/badge/latestdoi/569471513"><img src="https://zenodo.org/badge/569471513.svg" alt="DOI"></a> -->
