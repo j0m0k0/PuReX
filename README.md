@@ -1,7 +1,7 @@
 <p align="center">
   <picture align="center">
     <source media="(prefers-color-scheme: dark)" srcset="./logo/PuReX-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="./logo-PuReX-light.png">
+    <source media="(prefers-color-scheme: light)" srcset="./logo/PuReX-light.png">
     <img alt="PuReX logo with some description about it." src="./logo/PuReX-light.png">
   </picture>
 </p>
