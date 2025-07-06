@@ -23,8 +23,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install uv
-        run: pip install uv
+      - name: Setup uv
+        run: pip install uv && uv sync
 
       - name: Sync dependencies
         run: uv pip install -e .[dev]
