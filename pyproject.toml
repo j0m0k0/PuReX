@@ -16,6 +16,14 @@ dependencies = [
 [project.scripts]
 purex = "purex.cli:cli"
 
+[project.optional-dependencies]
+docs = [
+    "sphinx>=7.1.2",
+]
+all = [
+    "sphinx>=7.1.2",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
