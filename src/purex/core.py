@@ -12,8 +12,10 @@ async def get_total_pages(owner, repo, base_url, github_token, per_page=100):
         'Accept': 'application/vnd.github+json', 
         'X-GitHub-Api-Version': '2022-11-28',
         'User-Agent': 'MARL-CRAWLER',
-        "Authorization": f"Bearer {github_token}",
     }
+
+    if github_token:
+        headers["Authorization"] = f"Bearer {github_token}"
 
     params = {
         'per_page': per_page,
@@ -24,6 +26,7 @@ async def get_total_pages(owner, repo, base_url, github_token, per_page=100):
     async with httpx.AsyncClient() as client:
         response = await client.get(url, headers=headers, params=params)
         if response.status_code != 200:
+            print(response.content)
             raise RuntimeError(f"Failed to fetch PRs: {response.status_code}")
         link_header = response.headers.get("Link")
         first_page_data = response.json()
@@ -49,8 +52,10 @@ async def get_prs_async(owner, repo,  base_url, github_token):
         'Accept': 'application/vnd.github+json', 
         'X-GitHub-Api-Version': '2022-11-28',
         'User-Agent': 'MARL-CRAWLER',
-        "Authorization": f"Bearer {github_token}",
     }
+
+    if github_token:
+        headers["Authorization"] = f"Bearer {github_token}"
 
     async with httpx.AsyncClient(headers=headers) as client:
         tasks = [
@@ -97,9 +102,11 @@ def _get_pr_closer(owner, repo, pr_number, base_url, github_token):
     url = base_url + f"/repos/{owner}/{repo}/issues/{pr_number}/events"
     headers = {
         'Accept': 'application/vnd.github+json',
-        'User-Agent': 'PR-Tracker',
-        "Authorization": f"Bearer {github_token}",
+        'User-Agent': 'PR-Tracker',        
     }
+
+    if github_token:
+        headers["Authorization"] = f"Bearer {github_token}"
 
     response = httpx.get(url, headers=headers)
     if response.status_code != 200:
@@ -121,9 +128,11 @@ async def get_maintainers_info_async(owner, repo, pr_list, base_url, github_toke
     headers = {
         'Accept': 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2022-11-28',
-        'User-Agent': 'MARL-CRAWLER',
-        "Authorization": f"Bearer {github_token}",
+        'User-Agent': 'MARL-CRAWLER',        
     }
+
+    if github_token:
+        headers["Authorization"] = f"Bearer {github_token}"
 
     async with httpx.AsyncClient(headers=headers, timeout=20) as client:
         responses = []

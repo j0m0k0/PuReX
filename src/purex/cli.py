@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, date, timezone
 import os
 import asyncio
 import click
@@ -17,14 +17,10 @@ def cli():
 @click.option(
     "--start_date",
     type=click.DateTime(formats=["%m-%d-%Y"]),
+    default=date.today().strftime("%m-%d-%Y"),
     help="Inclusive starting date (MM-DD-YYYY) for pulling the pull-request data."
 )
-@click.option(
-    "--end_date",
-    type=click.DateTime(formats=["%m-%d-%Y"]),
-    help="Inclusive ending date (MM-DD-YYYY) for pulling the pull-request data."
-)
-def get(owner, repository, token, start_date, end_date, base_url):
+def get(owner, repository, token, start_date, base_url):
     """GET pull-request data for REPOSITY from OWNER.
 
     OWNER is the account name that hosts the repository (e.g., torvalds).
@@ -32,9 +28,8 @@ def get(owner, repository, token, start_date, end_date, base_url):
     REPOSITORY is the name of the repository (e.g., linux)."""
 
     token = token or os.getenv("PUREX_TOKEN")
-    time_delta = datetime.combine(start_date, datetime.min.time(), tzinfo=timezone.utc)
-
-    print(f'get is running. {owner}, {repository}, {token}, {start_date}, {end_date}, {time_delta}')
+    # start_date = start_date if start_date else 
+    time_delta = datetime.combine(start_date, datetime.min.time(), tzinfo=timezone.utc)    
 
     all_prs = asyncio.run(get_prs_async(owner, repository, base_url, token))
     processed_PRs = filter_prs(all_prs, time_delta)
