@@ -1,7 +1,7 @@
+import asyncio
 from datetime import datetime, timedelta, timezone
 
 import httpx
-import asyncio
 
 
 async def get_total_pages(owner, repo, base_url, github_token, per_page=100):

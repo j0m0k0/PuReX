@@ -1,9 +1,11 @@
-from datetime import datetime, date, timezone
-import os
 import asyncio
+import os
+from datetime import date, datetime, timezone
+
 import click
 
-from .core import get_prs_async, filter_prs, get_maintainers_info_async
+from .core import filter_prs, get_maintainers_info_async, get_prs_async
+
 
 @click.group()
 def cli():
