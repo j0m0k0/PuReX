@@ -15,29 +15,6 @@ dependencies = [
     "rich>=14.0.0",
 ]
 
-[project.scripts]
-purex = "purex.cli:cli"
-
-[project.optional-dependencies]
-docs = [
-    "sphinx>=7.1.2",
-]
-all = [
-    "sphinx>=7.1.2",
-]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[dependency-groups]
-dev = [
-    "isort>=5.13.2",
-    "pytest>=8.3.5",
-]
-
-
-
 classifiers = [
   # How mature is this project? Common values are
   #   3 - Alpha
@@ -60,10 +37,40 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
 ]
 
-
 [project.urls]
 Homepage = "https://github.com/j0m0k0/PuReX"
 Documentation = "https://j0m0k0.github.io/PuReX"
 Repository = "https://github.com/j0m0k0/PuReX.git"
 Issues = "https://github.com/j0m0k0/PuReX/issues"
 Changelog = "https://github.com/j0m0k0/PuReX/blob/master/CHANGELOG.md"
+
+
+[project.scripts]
+purex = "purex.cli:cli"
+
+[project.optional-dependencies]
+docs = [
+    "sphinx>=7.1.2",
+]
+all = [
+    "sphinx>=7.1.2",
+]
+
+
+
+
+
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "isort>=5.13.2",
+    "pytest>=8.3.5",
+]
+
+
+
