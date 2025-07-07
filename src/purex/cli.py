@@ -1,50 +1,44 @@
+from datetime import datetime, timezone
+import os
 import asyncio
-import json
-
 import click
 
-from purex.maintainers import fetch_maintainers_summary
-from purex.prs import fetch_and_filter_prs
-
-
-@click.group(invoke_without_command=True)
-@click.pass_context
-def cli(ctx):
-    if ctx.invoked_subcommand is None:
-        click.echo(ctx.get_help())
+from .core import get_prs_async, filter_prs, get_maintainers_info_async
 
 @click.group()
-def get():
-    """Get data from GitHub repositories (PRs, maintainers, etc.)"""
+def cli():
     pass
 
-@get.command()
-@click.option('--owner', required=True, help='Repository owner.')
-@click.option('--repo', required=True, help='Repository name.')
-@click.option('--output-file', default='prs.json', help='Where to store the PR list.')
-def prs(owner, repo, output_file):
-    """Fetch PRs from a repository"""
-    prs = asyncio.run(fetch_and_filter_prs(owner, repo))
-    with open(output_file, 'w') as f:
-        json.dump(prs, f, indent=2)
-    click.echo(f"Saved {len(prs)} PRs to {output_file}")
+@cli.command(short_help="Get pull-request data of a repository.")
+@click.argument("owner", nargs=1)
+@click.argument("repository", nargs=1)
+@click.option("--token", "-t", "token", default=None, help="GitHub Token")
+@click.option("--base_url", "-u", "base_url", default="https://api.github.com", help="REST API url of GitHub.")
+@click.option(
+    "--start_date",
+    type=click.DateTime(formats=["%m-%d-%Y"]),
+    help="Inclusive starting date (MM-DD-YYYY) for pulling the pull-request data."
+)
+@click.option(
+    "--end_date",
+    type=click.DateTime(formats=["%m-%d-%Y"]),
+    help="Inclusive ending date (MM-DD-YYYY) for pulling the pull-request data."
+)
+def get(owner, repository, token, start_date, end_date, base_url):
+    """GET pull-request data for REPOSITY from OWNER.
 
-@get.command()
-@click.option('--owner', required=True, help='Repository owner.')
-@click.option('--repo', required=True, help='Repository name.')
-@click.option('--input-file', required=True, help='PR list JSON file from ' + '"purex get prs".')
-@click.option('--output-file', default='maintainers.json', help='Where to save maintainers summary.')
-def maintainers(owner, repo, input_file, output_file):
-    """Get maintainers info from filtered PRs"""
-    with open(input_file, 'r') as f:
-        prs = json.load(f)
+    OWNER is the account name that hosts the repository (e.g., torvalds).
+    
+    REPOSITORY is the name of the repository (e.g., linux)."""
 
-    maintainers_info = asyncio.run(fetch_maintainers_summary(owner, repo, prs))
+    token = token or os.getenv("PUREX_TOKEN")
+    time_delta = datetime.combine(start_date, datetime.min.time(), tzinfo=timezone.utc)
 
-    with open(output_file, 'w') as f:
-        json.dump(maintainers_info, f, indent=2)
+    print(f'get is running. {owner}, {repository}, {token}, {start_date}, {end_date}, {time_delta}')
 
-    click.echo(f"Saved maintainer info to {output_file}")
+    all_prs = asyncio.run(get_prs_async(owner, repository, base_url, token))
+    processed_PRs = filter_prs(all_prs, time_delta)
+    maintainers_info = asyncio.run(get_maintainers_info_async(owner, repository, processed_PRs, base_url, token))
 
+    print(maintainers_info)
 
-cli.add_command(get)
