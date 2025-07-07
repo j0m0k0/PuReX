@@ -6,10 +6,9 @@
   </picture>
 </p>
 
-
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.0--alpha-red" />
-  <a href="https://pypi.python.org/pypi/purex" target="_blank"><img src="https://img.shields.io/pypi/pyversions/purex.svg" /></a>
+  <a href="https://pypi.org/project/purex/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/purex.svg" /></a>
   <img src="https://img.shields.io/pypi/dm/purex" />
   <a href="https://j0m0k0.github.io/PuReX" target="_blank"><img src="https://img.shields.io/badge/view-Documentation-red?" /></a>
   <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/purex-test.yml?branch=main">
