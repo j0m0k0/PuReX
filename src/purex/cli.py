@@ -1,13 +1,20 @@
 import asyncio
 import os
 from datetime import date, datetime, timezone
+from importlib.metadata import version, PackageNotFoundError
 
 import click
 
 from .core import filter_prs, get_maintainers_info_async, get_prs_async
 
+try:
+    __version__ = version("purex")  # match your [project.name]
+except PackageNotFoundError:
+    __version__ = "unknown"
+
 
 @click.group()
+@click.version_option(__version__, prog_name='purex')
 def cli():
     pass
 
@@ -38,4 +45,3 @@ def get(owner, repository, token, start_date, base_url):
     maintainers_info = asyncio.run(get_maintainers_info_async(owner, repository, processed_PRs, base_url, token))
 
     print(maintainers_info)
-

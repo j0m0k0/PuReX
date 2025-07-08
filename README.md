@@ -47,28 +47,35 @@ set PUREX_TOKEN="YOUR_TOKEN"
 For getting help about the PuReX, you can run it without any extra command or just pass the `help` option:
 ```bash
 purex --help
+
 Usage: purex [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  --help  Show this message and exit.
+  --version  Show the version and exit.
+  --help     Show this message and exit.
 
 Commands:
-  get  Get data from GitHub repositories (PRs, maintainers, etc.)
+  get  Get pull-request data of a repository.
 ```
 
 ### Getting Data from a Repository
 ```bash
-Usage: purex get [OPTIONS] COMMAND [ARGS]...
+purex get --help
 
-  Get data from GitHub repositories (PRs, maintainers, etc.)
+Usage: purex get [OPTIONS] OWNER REPOSITORY
+
+  GET pull-request data for REPOSITY from OWNER.
+
+  OWNER is the account name that hosts the repository (e.g., torvalds).
+
+  REPOSITORY is the name of the repository (e.g., linux).
 
 Options:
-  --help  Show this message and exit.
-
-Commands:
-  maintainers  Get maintainers info from filtered PRs
-  prs          Fetch PRs from a repository
-
+  -t, --token TEXT         GitHub Token
+  -u, --base_url TEXT      REST API url of GitHub.
+  --start_date [%m-%d-%Y]  Inclusive starting date (MM-DD-YYYY) for pulling
+                           the pull-request data.
+  --help                   Show this message and exit.
 ```
 
 For more info and tutorials, please refer to the documentation.
