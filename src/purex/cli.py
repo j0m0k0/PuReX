@@ -1,7 +1,7 @@
 import asyncio
 import os
 from datetime import date, datetime, timezone
-from importlib.metadata import version, PackageNotFoundError
+from importlib.metadata import PackageNotFoundError, version
 
 import click
 
