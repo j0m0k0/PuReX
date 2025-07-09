@@ -10,7 +10,7 @@
   <a href="https://pypi.org/project/purex/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/purex.svg" /></a>
 <!--   <img src="https://img.shields.io/pypi/dm/purex" /> -->
   <a href="https://j0m0k0.github.io/PuReX" target="_blank"><img src="https://img.shields.io/badge/view-Documentation-red?" /></a>
-  <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/purex-test.yml?branch=main">
+  <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/purex-test.yml?branch=main"> <br />
   <img src="https://img.shields.io/github/commit-activity/m/j0m0k0/PuReX">
   <img src="https://img.shields.io/github/license/j0m0k0/PuReX">
   <a href="https://doi.org/10.5281/zenodo.15825844"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.15851126.svg" alt="DOI"></a>
