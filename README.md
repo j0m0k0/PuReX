@@ -8,12 +8,12 @@
 
 <p align="center">
   <a href="https://pypi.org/project/purex/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/purex.svg" /></a>
-  <img src="https://img.shields.io/pypi/dm/purex" />
+<!--   <img src="https://img.shields.io/pypi/dm/purex" /> -->
   <a href="https://j0m0k0.github.io/PuReX" target="_blank"><img src="https://img.shields.io/badge/view-Documentation-red?" /></a>
   <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/purex-test.yml?branch=main">
   <img src="https://img.shields.io/github/commit-activity/m/j0m0k0/PuReX">
   <img src="https://img.shields.io/github/license/j0m0k0/PuReX">
-  <a href="https://doi.org/10.5281/zenodo.15825844"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.15825844.svg" alt="DOI"></a>
+  <a href="https://doi.org/10.5281/zenodo.15825844"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.15851126.svg" alt="DOI"></a>
 </p>  
 
 
@@ -86,7 +86,7 @@ If you use PuReX in your research, please cite it as follows:
 ```bib
 @software{PuReX,
   author = {Mokhtari Koushyar, Javad},
-  doi = {10.5281/zenodo.15825844},
+  doi = {10.5281/zenodo.15851126},
   month = {2},
   title = {{PuReX, Pull-Request Extractor}},
   url = {https://github.com/j0m0k0/PuReX},
