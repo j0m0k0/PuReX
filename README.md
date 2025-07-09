@@ -47,7 +47,10 @@ set PUREX_TOKEN="YOUR_TOKEN"
 For getting help about the PuReX, you can run it without any extra command or just pass the `help` option:
 ```bash
 purex --help
+```
 
+It shows the general help of the tool:
+```bash
 Usage: purex [OPTIONS] COMMAND [ARGS]...
 
 Options:
@@ -59,9 +62,12 @@ Commands:
 ```
 
 ### Getting Data from a Repository
+The tool switch is also available for every subcommand. For example for `get` command:
 ```bash
 purex get --help
-
+```
+Outputs:
+```
 Usage: purex get [OPTIONS] OWNER REPOSITORY
 
   GET pull-request data for REPOSITY from OWNER.
@@ -81,6 +87,10 @@ Options:
 Example: Let's say we want to get the pull-request information of `furo` package by `pradyunsg` starting from `01-01-2024` until the current date. We can use PuReX like this:
 ```bash
 purex get pradyunsg furo --start_date 01-01-2024
+```
+
+PuReX will extract the information of the requested repository within the selected time delta, and finally finds the maintainers responsible for closing or merging those PRs and returns the results in JSON format:
+```
 {
   'pradyunsg': {'closed': 7, 'merged': 36},
   'dependabot[bot]': {'closed': 3, 'merged': 0},
