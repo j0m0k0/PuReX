@@ -80,7 +80,7 @@ Options:
 
 Example: Let's say we want to get the pull-request information of `furo` package by `pradyunsg` starting from `01-01-2024` until the current date. We can use PuReX like this:
 ```bash
-uv run purex get pradyunsg furo --start_date 01-01-2024
+purex get pradyunsg furo --start_date 01-01-2024
 {
   'pradyunsg': {'closed': 7, 'merged': 36},
   'dependabot[bot]': {'closed': 3, 'merged': 0},
