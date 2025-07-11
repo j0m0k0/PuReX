@@ -8,12 +8,12 @@
 
 <p align="center">
   <a href="https://pypi.org/project/purex/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/purex.svg" /></a>
-  <img src="https://img.shields.io/pypi/dm/purex" />
+<!--   <img src="https://img.shields.io/pypi/dm/purex" /> -->
   <a href="https://j0m0k0.github.io/PuReX" target="_blank"><img src="https://img.shields.io/badge/view-Documentation-red?" /></a>
-  <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/purex-test.yml?branch=main">
+  <img src="http://img.shields.io/github/actions/workflow/status/j0m0k0/PuReX/purex-test.yml?branch=main"> <br />
   <img src="https://img.shields.io/github/commit-activity/m/j0m0k0/PuReX">
   <img src="https://img.shields.io/github/license/j0m0k0/PuReX">
-  <a href="https://doi.org/10.5281/zenodo.15825844"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.15825844.svg" alt="DOI"></a>
+  <a href="https://doi.org/10.5281/zenodo.15825844"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.15851126.svg" alt="DOI"></a>
 </p>  
 
 
@@ -47,7 +47,10 @@ set PUREX_TOKEN="YOUR_TOKEN"
 For getting help about the PuReX, you can run it without any extra command or just pass the `help` option:
 ```bash
 purex --help
+```
 
+It shows the general help of the tool:
+```bash
 Usage: purex [OPTIONS] COMMAND [ARGS]...
 
 Options:
@@ -59,9 +62,12 @@ Commands:
 ```
 
 ### Getting Data from a Repository
+The tool switch is also available for every subcommand. For example for `get` command:
 ```bash
 purex get --help
-
+```
+Outputs:
+```
 Usage: purex get [OPTIONS] OWNER REPOSITORY
 
   GET pull-request data for REPOSITY from OWNER.
@@ -78,6 +84,23 @@ Options:
   --help                   Show this message and exit.
 ```
 
+Example: Let's say we want to get the pull-request information of `furo` package by `pradyunsg` starting from `01-01-2024` until the current date. We can use PuReX like this:
+```bash
+purex get pradyunsg furo --start_date 01-01-2024
+```
+
+PuReX will extract the information of the requested repository within the selected time delta, and finally finds the maintainers responsible for closing or merging those PRs and returns the results in JSON format:
+```
+{
+  'pradyunsg': {'closed': 7, 'merged': 36},
+  'dependabot[bot]': {'closed': 3, 'merged': 0},
+  'ferdnyc': {'closed': 1, 'merged': 0},
+  'M-ZubairAhmed': {'closed': 1, 'merged': 0}
+}
+```
+
+The results shows the number of PRs closed/merged by each maitainer.
+
 For more info and tutorials, please refer to the documentation.
 
 ## About
@@ -86,7 +109,7 @@ If you use PuReX in your research, please cite it as follows:
 ```bib
 @software{PuReX,
   author = {Mokhtari Koushyar, Javad},
-  doi = {10.5281/zenodo.15825844},
+  doi = {10.5281/zenodo.15851126},
   month = {2},
   title = {{PuReX, Pull-Request Extractor}},
   url = {https://github.com/j0m0k0/PuReX},
