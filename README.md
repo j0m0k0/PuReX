@@ -73,7 +73,7 @@ Commands:
 ```
 
 ### Getting Data from a Repository
-The tool switch is also available for every subcommand. For example for `get` command:
+The help option is also available for every subcommand. For example for `get` command:
 ```bash
 purex get --help
 ```
