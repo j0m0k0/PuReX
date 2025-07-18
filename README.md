@@ -19,6 +19,8 @@
 
 
 ## Installation
+PuReX can be installed from [PyPI](https://pypi.org/project/purex/).
+
 Using pip:
 ```bash
 pip install purex
@@ -30,6 +32,15 @@ uv add purex
 ```
 
 To install the documentation, you can install `purex[doc]` instead of `purex`.
+```bash
+uv add purex[doc]
+```
+
+To install from the source, clone this repository, `cd` into the directory and run the following command:
+```bash
+pip install -e .
+```
+
 
 ## Tutorials
 First thing to do after the installation, is to set the environment variable token. This token is your GitHub token that will be used for sending the requests to GitHub REST API. Although including the token is not necessary, but it can be helpful for a faster extraction, specially for bigger projects.
