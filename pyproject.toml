@@ -1,7 +1,7 @@
 [project]
 name = "purex"
-version = "0.1.1"
-description = "PuReX - Pull Request eXtractor"
+version = "0.1.2"
+description = "PuReX - Pull Request data eXtractor"
 readme = "README.md"
 license = "MIT"
 

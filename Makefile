@@ -1,5 +1,7 @@
+all: sort test
+
 sort:
-	uv run isort src/
+	uv tool run isort src/
 
 test:
-	uv run pytest
+	uv tool run pytest

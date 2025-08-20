@@ -43,8 +43,8 @@ pip install -e .
 ```
 
 
-## Tutorials
-First thing to do after the installation, is to set the environment variable token. This token is your GitHub token that will be used for sending the requests to GitHub REST API. Although including the token is not necessary, but it can be helpful for a faster extraction, specially for bigger projects.
+## Basic Usage
+First thing to do after the installation, is to set the environment variable token. This token is your GitHub token that will be used for sending the requests to GitHub REST API. Although including the token is not necessary, but it can be helpful for a faster extraction, specially for bigger projects, since it has a higher rate limit than the public API.
 
 In UNIX-like (GNU/Linux, Mac OS) operating systems:
 ```bash

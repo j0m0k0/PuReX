@@ -14,9 +14,10 @@
 
 ### Enhancements
 - Adding `--raw` option to the `get` command to fetch the raw data of PRs.
-- Addubg `--filter` option to the `get` command to fetch the PRs based on defined filters in a YML file.
+- Making time delta at start date to be seven days by default.
 
 ### Bug fixes
-
+- Added docstrings to the core functions
+- Improved header definition for HTTP requests
 
 ### Documentation
