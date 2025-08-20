@@ -1,15 +1,5 @@
 # Changelog 0.1.x
 
-## 0.1.1
-
-### Enhancements
-- Adding `--version` option to the main command.
-
-### Bug fixes
-
-
-### Documentation
-
 ## 0.1.2
 
 ### Enhancements
@@ -21,3 +11,15 @@
 - Improved header definition for HTTP requests
 
 ### Documentation
+
+
+## 0.1.1
+
+### Enhancements
+- Adding `--version` option to the main command.
+
+### Bug fixes
+
+
+### Documentation
+
