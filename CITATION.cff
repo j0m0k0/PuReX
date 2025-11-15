@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use the PuReX framework, please cite the paper that defines the model. Cite this software release as well when a versioned archive is available."
+title: "PuReX: Game-Theoretic Pull Request Assignment with Deep Reinforcement Learning"
+type: software
+version: 0.1.0
+authors:
+  - name: "PuReX contributors"
+repository-code: "https://github.com/j0m0k0/PuReX"
+url: "https://github.com/j0m0k0/PuReX"
+license: MIT
+keywords:
+  - pull request assignment
+  - supply-chain security
+  - reinforcement learning
+  - PSRO
+  - PPO
+preferred-citation:
+  type: conference-paper
+  title: "PuRe Defender: A Game-Theoretic Pull Request Assignment with Deep RL"
+  authors:
+    - family-names: "Mokhtari Koushyar"
+      given-names: "Javad"
+    - family-names: "Guirguis"
+      given-names: "Mina"
+    - family-names: "Atia"
+      given-names: "George K."
+  collection-title: "Game Theory and AI for Security"
+  collection-type: proceedings
+  volume: 16223
+  pages: 193-212
+  publisher: "Springer"
+  year: 2025
+  doi: "10.1007/978-3-032-08064-6_10"
+

@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "purex"
+version = "0.1.0"
+description = "A reproducible game-theoretic deep RL framework for adversarial pull-request assignment"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { text = "MIT" }
+authors = [
+  { name = "PuReX contributors" },
+]
+keywords = [
+  "pull request assignment",
+  "open-source software supply chain security",
+  "multi-agent reinforcement learning",
+  "policy-space response oracles",
+  "proximal policy optimization",
+  "game theory",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Security",
+]
+dependencies = [
+  "numpy==2.2.6",
+  "torch==2.7.1",
+]
+
+[project.scripts]
+purex = "purex.cli:main"
+
+[project.urls]
+Repository = "https://github.com/j0m0k0/PuReX"
+Paper = "https://doi.org/10.1007/978-3-032-08064-6_10"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/purex"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+

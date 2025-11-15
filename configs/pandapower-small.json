@@ -1,0 +1,15 @@
+{
+  "name": "pandapower-small",
+  "horizon": 100,
+  "expertise_counts": [1, 0, 2],
+  "detection_probability": [[0.57, 0.35, 0.10], [0.79, 0.50, 0.25], [0.89, 0.55, 0.40]],
+  "resolution_steps": [[3, 3, 3], [2, 2, 2], [1, 1, 1]],
+  "detected_reward": [60.0, 24.0, 12.0],
+  "missed_reward": [-20.0, -12.0, -4.0],
+  "benign_reward": [2.6, 1.2, 0.4],
+  "idle_reward": -5.0,
+  "malicious_capacity_by_priority": [2, 2, 2],
+  "benign_arrival_probability_by_priority": [0.10, 0.25, 0.10],
+  "issue_catalog_size": 1000,
+  "reported_state_space_size": 432
+}
