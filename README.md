@@ -1,12 +1,26 @@
 # PuReX: Game-Theoretic Pull Request Assignment with Deep RL
 
+[![Paper DOI](https://img.shields.io/badge/DOI-10.1007%2F978--3--032--08064--6_10-2B6CB0)](https://doi.org/10.1007/978-3-032-08064-6_10)
+[![Cite](https://img.shields.io/badge/Cite-CITATION.cff-4A88CF)](CITATION.cff)
+[![License: MIT](https://img.shields.io/badge/License-MIT-2E7D32.svg)](LICENSE)
+[![Python 3.10–3.12](https://img.shields.io/badge/Python-3.10%20to%203.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
+[![PyTorch 2.7.1](https://img.shields.io/badge/PyTorch-2.7.1-EE4C2C?logo=pytorch&logoColor=white)](pyproject.toml)
+
 PuReX is a research implementation of the two-player pull-request assignment game in **“PuRe Defender: A Game-Theoretic Pull Request Assignment with Deep RL.”** It models a defender assigning requests to maintainers and a stealthy attacker submitting malicious requests, then trains policy populations with Proximal Policy Optimization (PPO) oracles in a Policy-Space Response Oracle (PSRO) loop.
+
+Read the paper: [*PuRe Defender: A Game-Theoretic Pull Request Assignment with Deep RL*](https://doi.org/10.1007/978-3-032-08064-6_10).
+
+## PSRO workflow
+
+[![PSRO training loop: initialize policies, construct the meta-game, solve with alpha-rank, train PPO best responses, and update policy sets.](docs/assets/psro-training-loop.png)](https://doi.org/10.1007/978-3-032-08064-6_10)
+
+*PSRO training loop from the paper, Figure 3. Select the image to open the paper.*
 
 The simulator instantiates the paper's small Pandapower and large NumPy case-study parameters. The paper does not publish its source data or several implementation details; consequently, this repository makes those choices configurable and documents them as assumptions. It does not claim bit-for-bit reproduction of the reported results.
 
 ## Install
 
-Python 3.10 or newer is required. From a clone of this repository:
+Python 3.10 through 3.12 is supported. From a clone of this repository:
 
 ```bash
 python -m venv .venv
